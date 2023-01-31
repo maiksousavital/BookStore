@@ -1,0 +1,16 @@
+/* .book{
+    list-style: none;
+    text-overflow: ellipsis;
+    width: 25%;
+    text-align: center;
+    cursor: pointer;
+} */
+
+
+
+.example-card {
+    max-width: 250px;
+    margin: 10px;
+  }
+
+ 
