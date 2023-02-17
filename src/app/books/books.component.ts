@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IBook } from '../interfaces/Book';
+import { BooksService } from './books.service';
 
 @Component({
   selector: 'app-books',
@@ -7,16 +8,18 @@ import { IBook } from '../interfaces/Book';
   styleUrls: ['./books.component.css'],
 })
 export class BooksComponent implements OnInit {
+  constructor(private booksService: BooksService) {}
+
   pageTitle: string = 'Book List';
+  books: IBook[] = [];
 
-  books: IBook[] = [
-    {
-      Name: 'Clean Code',
-      Author: 'Robert C. Martin ',
-      Image: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
-      Price: 50,
-    },
-  ];
+  //cart: IBook[] = [];
+  // addToCart(book: IBook): void {
+  //   this.cart.push(book);
+  //   console.log(this.cart);
+  // }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.books = this.booksService.getBooks();
+  }
 }

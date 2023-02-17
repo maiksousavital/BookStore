@@ -1,2 +1,24 @@
+<!-- <app-books></app-books>
+<app-cart></app-cart> -->
 
-<app-books></app-books>
+<nav class="flex justify-between p-4 bg-purple-800 text-white">
+    <div>
+        <a routerLink="">Book Shop</a>
+    </div>
+    <div>
+        <ng-container *ngIf="isAuthenticated()">
+            <a class="mx-4" routerLink="cart">My Cart</a>
+            <button class="mx-4" (click)="signOut()">Logout</button>
+        </ng-container>
+
+        <ng-container *ngIf="!isAuthenticated()">
+            <a class="mx-4" routerLink="login">Login</a>
+            <a class="mx-4" routerLink="register">Register</a>
+        </ng-container>
+    </div>
+
+</nav>
+
+<div class="">
+    <router-outlet></router-outlet>
+</div>

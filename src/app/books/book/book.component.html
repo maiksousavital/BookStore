@@ -1,0 +1,45 @@
+<!-- <li class="book">
+    <p>{{book.Name | titlecase}} by {{book.Author | titlecase}}</p>
+    <img [src]="book.Image" [alt]="book.Name">
+    <p>{{book.Price | currency: 'USD'}}</p>
+
+     
+</li> -->
+
+<!-- <mat-card class="example-card">
+    <mat-card-header class="book-title">        
+        <p>{{book.Name | titlecase}} <br> by {{book.Author | titlecase}}</p>
+        <p></p>
+    </mat-card-header>
+    <img mat-card-image class="book-image" [src]="book.Image" alt="book.Name">
+    <mat-card-content class="price">
+        <p>{{book.Price | currency: 'USD'}}</p>
+    </mat-card-content>
+    <mat-card-actions class="card-button">        
+        <div class="example-button-row">
+            <button mat-fab extended *ngIf="!isInCart" (click)="addToCart()" color="primary">
+                <mat-icon>shopping_cart</mat-icon>
+                Add to Cart
+              </button>
+
+              <button mat-fab extended *ngIf="isInCart" (click)="removeFromCart()"  color="primary">
+                <mat-icon>delete</mat-icon>
+                Remove from Cart
+              </button>
+        </div>
+    </mat-card-actions>
+</mat-card> -->
+
+
+
+<li class="flex border rounded-xl h-60">
+    <img [src]="book.Image" [alt]="book.Name" width="100" class="m-auto rounded-sm" />
+    <div class="m-auto">
+        <p class="text-lg">{{ book.Name | titlecase }} by {{ book.Author |
+            titlecase}}</p>
+        <p class="my-4">{{ book.Price | currency:'USD' }}</p>
+        <button class="bg-yellow-400 rounded p-3" *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
+        <button class="bg-yellow-400 rounded p-3" *ngIf="isInCart" (click)="removeFromCart()">Remove from
+            Cart</button>
+    </div>
+</li>
